@@ -3,33 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شكرًا لمشاركتك!</title>
+    <title>اختبار أمان</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
-        }
-        h1 {
-            color: #4CAF50;
+            color: #ff0000;
+            background-color: #000000; /* الخلفية السوداء */
         }
         p {
-            font-size: 18px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .large-text {
+            font-size: 40px; /* تكبير الحجم */
+        }
+        .footer {
+            color: #66cc66; /* تغميق اللون الأخضر */
+            font-size: 16px; /* تصغير الخط للسطر الأخير */
+            margin-top: 250px; /* المسافة العلوية */
+        }
+        .small-footer {
+            font-size: 14px; /* تصغير الخط للجملة الثانية */
         }
     </style>
 </head>
 <body>
 
-    <h1>شكرًا لمشاركتك في اختبار الأمان!</h1>
-    <p>لقد تم تسجيل دخولك في الوقت: <span id="time"></span></p>
+    <p class="large-text">تم الوصول إلى بياناتك بطريقة غير مصرح بها</p>
+    <p class="large-text">تم تسجيل دخولك في الوقت: <span id="time"></span></p>
+
+    <div class="footer">
+        <p>لقد كان اختبارًا من دائرة أمن المعلومات</p>
+        <p class="small-footer">تم إجراء هذا الاختبار بهدف توعيتك بمخاطر الضغط على الروابط غير الموثوقة نرجو منك توخي الحذر في المستقبل</p>
+    </div>
 
     <script>
-        // تسجيل الوقت الحالي
-        const currentTime = new Date().toLocaleString();
-        document.getElementById('time').innerText = currentTime;
+        // تسجيل الوقت الحالي بتنسيق 24 ساعة مع التاريخ
+        const currentDateTime = new Date().toLocaleString('ar-JO', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: false
+        });
+
+        const formattedDateTime = currentDateTime.replace('،', ' ، '); // التأكد من وجود فاصلة بين التاريخ والوقت
+        document.getElementById('time').innerText = formattedDateTime;
 
         // تسجيل تفاصيل الدخول (هنا يمكنك استبدال هذا بجزء من كود السيرفر لجمع البيانات)
-        console.log("Employee accessed the security test landing page at: " + currentTime);
+        console.log("Employee accessed the security test landing page at: " + formattedDateTime);
     </script>
 
 </body>
