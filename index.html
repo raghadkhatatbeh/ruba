@@ -10,11 +10,17 @@
             text-align: center;
             margin: 50px;
             color: #ff0000;
-            background-color: #000000; /* الخلفية السوداء */
+            position: relative;
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20220509/pngtree-cybersecurity-concept-of-hacker-and-technology-background-design-image_1211951.jpg');
+            background-size: cover; /* جعل الصورة تغطي الخلفية بالكامل */
+            background-position: center; /* توسيط الصورة */
+            background-repeat: no-repeat; /* منع تكرار الصورة */
         }
         p {
             font-size: 20px;
             font-weight: bold;
+            position: relative; /* لجعل النص فوق الطبقة */
+            z-index: 1;
         }
         .large-text {
             font-size: 40px; /* تكبير الحجم */
@@ -23,9 +29,21 @@
             color: #66cc66; /* تغميق اللون الأخضر */
             font-size: 16px; /* تصغير الخط للسطر الأخير */
             margin-top: 250px; /* المسافة العلوية */
+            position: relative; /* لجعل النص فوق الطبقة */
+            z-index: 1;
         }
         .small-footer {
             font-size: 14px; /* تصغير الخط للجملة الثانية */
+        }
+        .tips {
+            color: #66cc66; /* نفس اللون الأخضر الفاتح */
+            font-size: 18px; /* تكبير حجم النص */
+            margin-top: 10px; /* المسافة العلوية */
+            text-align: center; /* محاذاة النص إلى المنتصف */
+            position: relative;
+        }
+        .tips p {
+            margin: 0; /* إزالة الهوامش */
         }
     </style>
 </head>
@@ -37,6 +55,14 @@
     <div class="footer">
         <p>لقد كان اختبارًا من دائرة أمن المعلومات</p>
         <p class="small-footer">تم إجراء هذا الاختبار بهدف توعيتك بمخاطر الضغط على الروابط غير الموثوقة نرجو منك توخي الحذر في المستقبل</p>
+        
+        <div class="tips">
+            <p>لحماية نفسك تأكد من:</p>
+            <p>إيميل المرسل</p>
+            <p>محتوى الإيميل</p>
+            <p>انتبه من النقر على أي رابط عشوائي</p>
+        </div>
+        
     </div>
 
     <script>
